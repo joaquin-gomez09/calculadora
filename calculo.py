@@ -7,6 +7,7 @@ while True:
     print("2. resta")
     print("3. multiplicación")
     print("4. división")
+    print("5. salir")
     print("")
 
     try: 
@@ -31,3 +32,22 @@ while True:
         except ValueError as e:
             print("error")
             print("detalle:", e)
+
+    elif opcion == "3":
+        try:
+            resultado = numero * numero_2
+            print(resultado)
+        except ValueError as e:
+            print("error")
+            print("detalle:", e)
+
+    elif opcion == "4":
+        try:
+            resultado = numero / numero_2
+            print(resultado)
+        except ValueError as e:
+            print("error")
+            print("detalle:", e)
+    
+    elif opcion == "5":
+        break
