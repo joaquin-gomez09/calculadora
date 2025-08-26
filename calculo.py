@@ -50,4 +50,5 @@ while True:
             print("detalle:", e)
     
     elif opcion == "5":
+        print("¡Adios!")
         break
