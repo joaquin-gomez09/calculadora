@@ -1,54 +1,45 @@
-while True:
-    numero = int(input("Ingresar un numero:"))
-    numero_2 = int(input("Ingresar un segundo numero:"))
-
-    print("")
-    print("1. suma")
-    print("2. resta")
-    print("3. multiplicación")
-    print("4. división")
-    print("5. salir")
-    print("")
-
-    try: 
-        opcion = input("Elegir una operación: ")
-    except ValueError as e:
-        print("error")
-        print("detalle:", e)
-        continue
-
-    if opcion == "1":
-        try:
-            resultado = numero + numero_2
-            print(resultado)
-        except ValueError as e:
-            print("error")
-            print("detalle:", e)
+class Calculadora:
+    def __init__(self):
+        self.numero = 0
+        self.numero = 0
     
-    elif opcion == "2":
-        try:
-            resultado = numero - numero_2
-            print(resultado)
-        except ValueError as e:
-            print("error")
-            print("detalle:", e)
-
-    elif opcion == "3":
-        try:
-            resultado = numero * numero_2
-            print(resultado)
-        except ValueError as e:
-            print("error")
-            print("detalle:", e)
-
-    elif opcion == "4":
-        try:
-            resultado = numero / numero_2
-            print(resultado)
-        except ValueError as e:
-            print("error")
-            print("detalle:", e)
+    def ingresar_numeros(self):
+        self.numero = int(input("Ingresar un número: "))
+        self.numero_2 = int(input("Ingresar un segundo numero:"))
     
-    elif opcion == "5":
-        print("¡Adios!")
-        break
+    def mostrar_menu(self):
+        print("1. suma")
+        print("2. resta")
+        print("3. multiplicación")
+        print("4. división")
+        print("5. salir")
+
+    def operar(self, opcion):
+        try:
+            if opcion == "1":
+                print("Resultado:", self.numero + self.numero_2)
+            elif opcion == "2":
+                print("Resultado:", self.numero - self.numero_2)
+            elif opcion == "3":
+                print("Resultado:", self.numero * self.numero_2)
+            elif opcion == "4":
+                print("Resultado:", self.numero / self.numero_2)
+            elif opcion == "5":
+                print("!Adios¡")
+                return False
+            else:
+                print("opción invalida")
+        except Exception as e:
+            print("Error", e)
+        return True
+    
+    def iniciar(self):
+        while True:
+            self.ingresar_numeros()
+            self.mostrar_menu()
+            opcion = input("Elegir una operación:")
+            if not self.operar(opcion):
+                break
+
+calculadora = Calculadora()
+calculadora.iniciar()
