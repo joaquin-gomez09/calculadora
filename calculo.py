@@ -8,11 +8,11 @@ class Calculadora:
         self.numero_2 = int(input("Ingresar un segundo numero:"))
     
     def mostrar_menu(self):
-        print("1. suma")
+        print("\n1. suma")
         print("2. resta")
         print("3. multiplicación")
         print("4. división")
-        print("5. salir")
+        print("5. salir\n")
 
     def operar(self, opcion):
         try:
@@ -36,8 +36,16 @@ class Calculadora:
     def iniciar(self):
         while True:
             self.ingresar_numeros()
-            self.mostrar_menu()
-            opcion = input("Elegir una operación:")
+
+            while True:
+                self.mostrar_menu()
+                opcion = input("Elegir una operación: ")
+
+                if opcion in ["1", "2", "3", "4", "5"]:
+                    break
+                else:
+                    print("\nOpción inválida. Elegí una opción del 1 al 5.\n")
+
             if not self.operar(opcion):
                 break
 
