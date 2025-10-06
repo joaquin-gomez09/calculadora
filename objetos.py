@@ -28,11 +28,11 @@ class Calculadora:
             elif self.opcion == "3":
                 print("Resultado: ", self.numero * self.numero_2)
             elif self.opcion == "4":
-                if self.opcion != 0:
+                if self.numero_2 != 0:
                     print("Resultado: ", self.numero / self.numero_2)
                 else:
                     print("Error: división por cero.")
-            elif self.opcion == 5:
+            elif self.opcion == "5":
                 print("¡Adios!")
                 return False
             else:
